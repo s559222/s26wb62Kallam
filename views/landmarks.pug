@@ -2,3 +2,13 @@ extends layout
 
 block content
   h1= title
+
+  - var results = [{ landmark_name: "Eiffel Tower", country: "France", height: 330 }, { landmark_name: "Big Ben", country: "United Kingdom", height: 96 }, { landmark_name: "Statue of Liberty", country: "United States", height: 93 }]
+
+  div(class="container-fluid")
+    div(class="row")
+      each item in results
+        div(class="col-sm-2 border p-2 m-2")
+          p Landmark: #{item.landmark_name}
+          p Country: #{item.country}
+          p Height: #{item.height}
