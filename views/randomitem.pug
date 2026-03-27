@@ -2,3 +2,10 @@ extends layout
 
 block content
   h1= title
+
+  - var image_names = ["car1.jpg", "car2.jpg", "car3.jpg", "car4.jpg", "car5.jpg"]
+
+  - for (var i = 0; i < 3; i++)
+    - var randomIndex = Math.floor(Math.random() * 5)
+    - var chosen = image_names[randomIndex]
+    img(src="/images/" + chosen, alt="Image of " + chosen, height="300", width="300", class="m-2")
